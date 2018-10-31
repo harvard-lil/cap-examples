@@ -17,10 +17,6 @@ def extract(word="witchcraft", snippets=True):
 
     word_results = {}
 
-    # get page count (100 cases per page)
-    # pages = int(math.ceil(res['count'] / 100.0))
-
-    # for page in range(0, pages):
     warning_printed = False
     while True:
         for case in res['results']:
