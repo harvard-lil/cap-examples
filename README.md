@@ -14,11 +14,6 @@ $ pyenv activate capexamples
 (capexamples) $ 
 ```
 
-Install requirements:
-```
-(capexamples) $ pip install -r requirements.txt
-```
-
 Set up! 
 ```
 (capexamples) $ fab setup
