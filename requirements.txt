@@ -9,14 +9,18 @@ asn1crypto==0.24.0        # via cryptography
 backcall==0.1.0           # via ipython
 bcrypt==3.1.4             # via paramiko
 bleach==3.0.2             # via nbconvert
+certifi==2018.10.15       # via requests
 cffi==1.11.5              # via bcrypt, cryptography, pynacl
+chardet==3.0.4            # via requests
 click==7.0                # via pip-tools
 cryptography==2.3.1       # via paramiko
-decorator==4.3.0          # via ipython, traitlets
+cycler==0.10.0            # via matplotlib
+decorator==4.3.0          # via ipython, plotly, traitlets
 defusedxml==0.5.0         # via nbconvert
 entrypoints==0.2.3        # via nbconvert
 fabric3==1.14.post1
-idna==2.7                 # via cryptography
+googlemaps==3.0.2
+idna==2.7                 # via cryptography, requests
 ipykernel==5.1.0          # via ipywidgets, jupyter, jupyter-console, notebook, qtconsole
 ipython-genutils==0.2.0   # via nbformat, notebook, qtconsole, traitlets
 ipython==7.0.1            # via ipykernel, ipywidgets, jupyter-console
@@ -28,17 +32,22 @@ jupyter-client==5.2.3     # via ipykernel, jupyter-console, notebook, qtconsole
 jupyter-console==6.0.0    # via jupyter
 jupyter-core==4.4.0       # via jupyter-client, nbconvert, nbformat, notebook, qtconsole
 jupyter==1.0.0
+kiwisolver==1.0.1         # via matplotlib
 markupsafe==1.0           # via jinja2
+matplotlib==3.0.1
 mistune==0.8.4            # via nbconvert
 nbconvert==5.4.0          # via jupyter, notebook
-nbformat==4.4.0           # via ipywidgets, nbconvert, notebook
+nbformat==4.4.0           # via ipywidgets, nbconvert, notebook, plotly
 notebook==5.7.0           # via jupyter, widgetsnbextension
+numpy==1.15.4             # via matplotlib, pandas
+pandas==0.23.4
 pandocfilters==1.4.2      # via nbconvert
 paramiko==2.4.2           # via fabric3
 parso==0.3.1              # via jedi
 pexpect==4.6.0            # via ipython
 pickleshare==0.7.5        # via ipython
 pip-tools==3.1.0
+plotly==3.4.0
 prometheus-client==0.4.2  # via notebook
 prompt-toolkit==2.0.6     # via ipython, jupyter-console
 ptyprocess==0.6.0         # via pexpect, terminado
@@ -46,16 +55,22 @@ pyasn1==0.4.4             # via paramiko
 pycparser==2.19           # via cffi
 pygments==2.2.0           # via ipython, jupyter-console, nbconvert, qtconsole
 pynacl==1.3.0             # via paramiko
-python-dateutil==2.7.3    # via jupyter-client
+pyparsing==2.3.0          # via matplotlib
+python-dateutil==2.7.3    # via jupyter-client, matplotlib, pandas
+pytz==2018.7              # via pandas, plotly
 pyzmq==17.1.2             # via jupyter-client, notebook
 qtconsole==4.4.2          # via jupyter
+requests==2.20.0
+retrying==1.3.3           # via plotly
 send2trash==1.5.0         # via notebook
 simplegeneric==0.8.1      # via ipython
-six==1.11.0               # via bcrypt, bleach, cryptography, fabric3, pip-tools, prompt-toolkit, pynacl, python-dateutil, traitlets
+six==1.11.0               # via bcrypt, bleach, cryptography, cycler, fabric3, pip-tools, plotly, prompt-toolkit, pynacl, python-dateutil, retrying, traitlets
 terminado==0.8.1          # via notebook
 testpath==0.4.2           # via nbconvert
 tornado==5.1.1            # via ipykernel, jupyter-client, notebook, terminado
+tqdm==4.28.1
 traitlets==4.3.2          # via ipykernel, ipython, ipywidgets, jupyter-client, jupyter-core, nbconvert, nbformat, notebook, qtconsole
+urllib3==1.24.1           # via requests
 wcwidth==0.1.7            # via prompt-toolkit
 webencodings==0.5.1       # via bleach
 widgetsnbextension==3.4.2  # via ipywidgets
