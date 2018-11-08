@@ -1,5 +1,7 @@
 settings.py
 
+data/*
+
 
 .idea
 # Byte-compiled / optimized / DLL files
