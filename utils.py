@@ -1,9 +1,8 @@
 import requests
 import zipfile
 import io
-from tqdm import tqdm
 
-import settings
+from config import settings
 
 CVIOLET = '\33[35m'
 CEND = '\33[0m'
