@@ -3,3 +3,10 @@ tqdm
 
 Fabric3
 jupyter
+
+requests
+
+pandas
+matplotlib
+plotly
+googlemaps

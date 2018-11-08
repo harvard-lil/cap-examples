@@ -14,11 +14,6 @@ $ pyenv activate capexamples
 (capexamples) $ 
 ```
 
-Install requirements:
-```
-(capexamples) $ pip install -r requirements.txt
-```
-
 Set up! 
 ```
 (capexamples) $ fab setup
@@ -42,7 +37,10 @@ Or, download the Arkansas dataset
 
 In order to download [non-whitelisted](https://case.law/api/#limits) cases, you must [register for an API key](https://case.law/user/register/).
 
-Once you have your API key, copy and paste it into your secret keys file [settings.py](settings.py).
+Once you have your API key, copy and paste it into your secret keys file [settings.py](config/settings.py).
 
 
+## Projects
+- [api_wordsearch](api_wordsearch/wordsearch.py) - Get cases that include a search word, using the API. This requires an API key.
+- [map_courts](map_courts/map_courts.ipynb) - Map all the courts on a U.S. map.
 
