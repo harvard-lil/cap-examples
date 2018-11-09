@@ -26,12 +26,12 @@ Set up!
 #### Helper methods to download whitelisted bulk data 
 Download the Illinois dataset
 ```
-(capexamples) $ fab get_data:Illinois
+(capexamples) $ fab get_cases_from_bulk:Illinois
 ```
 
 Or, download the Arkansas dataset
 ```
-(capexamples) $ fab get_data:Arkansas
+(capexamples) $ fab get_cases_from_bulk:Arkansas
 ```
  
 ## Using the API

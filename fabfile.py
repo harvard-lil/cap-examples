@@ -25,7 +25,7 @@ def setup():
 @task
 def get_cases_from_bulk(jurisdiction="Illinois"):
     """
-    Gets all cases of a requestion jurisdiction from /bulk if available
+    Gets all cases of a requested jurisdiction from /bulk if available
     Saves to /data folder
     """
     utils.get_cases_from_bulk(jurisdiction)
