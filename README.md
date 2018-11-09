@@ -16,6 +16,7 @@ $ pyenv activate capexamples
 
 Set up! 
 ```
+(capexamples) $ pip install Fabric3
 (capexamples) $ fab setup
 ```
 
