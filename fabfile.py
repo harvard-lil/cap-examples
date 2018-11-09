@@ -9,9 +9,11 @@ import utils
 @task
 def setup():
     utils.print_info("Setting up cap-examples")
+
     if not os.path.exists("settings.py"):
         utils.print_info("Setting up settings.py")
-        local("cp settings.example.py settings.py")
+        local("cp config/settings.example.py config/settings.py")
+
     if not os.path.exists("./data"):
         utils.print_info("Setting up /data directory")
         local("mkdir data")
@@ -19,6 +21,7 @@ def setup():
     utils.print_info("Installing requirements")
     local("pip install -r requirements.txt")
 
+    print("Done.")
 
 @task
 def get_cases_from_bulk(jurisdiction="Illinois"):
