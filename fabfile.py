@@ -5,7 +5,6 @@ from fabric.api import local
 
 import utils
 
-
 @task
 def setup():
     utils.print_info("Setting up cap-examples")
