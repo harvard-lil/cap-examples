@@ -41,6 +41,7 @@ Once you have your API key, copy and paste it into your secret keys file [settin
 
 
 ## Projects
+- [bulk_case_extract](bulk_extract/extract_cases.py) - Get cases from our api's /bulk endpoint. Extract cases into a dataframe.  
 - [api_wordsearch](api_wordsearch/wordsearch.py) - Get cases that include a search word, using the API. This requires an API key.
 - [map_courts](map_courts/map_courts.ipynb) - Map all the courts on a U.S. map.
 
