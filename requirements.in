@@ -6,6 +6,8 @@ jupyter
 
 requests
 
+pytest # testing
+
 pandas
 matplotlib
 plotly

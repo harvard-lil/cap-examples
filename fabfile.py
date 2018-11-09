@@ -15,18 +15,18 @@ def setup():
     if not os.path.exists("./data"):
         utils.print_info("Setting up /data directory")
         local("mkdir data")
-        
+
     utils.print_info("Installing requirements")
     local("pip install -r requirements.txt")
 
 
 @task
-def get_cases(jurisdiction="Illinois"):
+def get_cases_from_bulk(jurisdiction="Illinois"):
     """
-    Gets 500 cases for jurisdiction
+    Gets all cases of a requestion jurisdiction from /bulk if available
+    Saves to /data folder
     """
-    utils.get_cases(jurisdiction)
-    return
+    utils.get_cases_from_bulk(jurisdiction)
 
 
 @task
