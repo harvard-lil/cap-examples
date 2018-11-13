@@ -33,7 +33,7 @@ Or, download the Arkansas dataset
 ```
  
 ## Using the API
-[Read our API documentation](https://case.law/api/)
+[Read our API documentation](https://case.law/api/).
 
 In order to download [non-whitelisted](https://case.law/api/#limits) cases, you must [register for an API key](https://case.law/user/register/).
 
