@@ -16,9 +16,7 @@ $ pyenv activate capexamples
 
 Set up! 
 ```
-(capexamples) $ pip install Fabric3
-(capexamples) $ cp config/settings.example.py config/settings.py
-(capexamples) $ fab setup
+(capexamples) $ pip install -r requirements.txt && fab setup
 ```
 
 ## Downloading bulk data
