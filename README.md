@@ -1,10 +1,13 @@
 # CAP examples
 
-A repository of examples of what can be done with Caselaw Access Project data
+A repository of examples of what can be done with Caselaw Access Project data.
+- [CAP Github repo](https://github.com/harvard-lil/capstone)
+- [CAP homepage](https://case.law/)
 
-3.5.4 is the python version we're currently using on CAP, so to keep things simple, we'll be using the same version for these examples.
+
+`3.5.4` is the python version we're currently using on CAP, so to keep things simple, we'll be using the same version for these examples.
  
-We recommend installing pyenv ([follow instructions to install here](https://github.com/pyenv/pyenv)). 
+We recommend installing pyenv — [follow instructions to install here](https://github.com/pyenv/pyenv). 
 
 Install your python version using pyenv and activate your virtual environment:
 ```
@@ -33,7 +36,7 @@ Or, download the Arkansas dataset
 ```
  
 ## Using the API
-[Read our API documentation](https://case.law/api/).
+[Read our API documentation.](https://case.law/api/)
 
 In order to download [non-whitelisted](https://case.law/api/#limits) cases, you must [register for an API key](https://case.law/user/register/).
 
