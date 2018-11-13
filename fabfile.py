@@ -28,6 +28,8 @@ def get_cases_from_bulk(jurisdiction="Illinois"):
     Gets all cases of a requested jurisdiction from /bulk if available
     Saves to /data folder
     """
+    utils.print_info("Getting compressed file for %s from /bulk endpoint.\nThis might take a while." % jurisdiction)
+    
     utils.get_cases_from_bulk(jurisdiction)
 
 
