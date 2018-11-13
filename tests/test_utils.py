@@ -16,3 +16,4 @@ def test_get_api_url():
     content = resp.json()
     assert "bulk" in content.keys()
     assert "cases" in content.keys()
+
