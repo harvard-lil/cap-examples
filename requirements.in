@@ -12,6 +12,9 @@ pytest # testing
 pandas
 matplotlib
 plotly
+spacy
+seaborn
+
 googlemaps
 
-spacy
+pyquery
