@@ -3,6 +3,7 @@ tqdm
 
 Fabric3
 jupyter
+notebook>=5.7.2
 
 requests
 
@@ -12,3 +13,5 @@ pandas
 matplotlib
 plotly
 googlemaps
+
+spacy
