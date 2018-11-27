@@ -59,4 +59,4 @@ Once you have your API key, copy and paste it into your secret keys file [settin
 - [Full Text Search with Context](api_text_search/api_text_search.py) - Like full text search, only this time using your API key to get the context around the word.
 - [Bulk Exploration: ngrams](bulk_exploration/ngrams.ipynb) – Use the open Arkansas bulk cases to explore interesting words.
 - [Bulk Exploration: ngrams and Justice Cartwright](bulk_exploration/cartwright.ipynb) – Use the open Illinois bulk cases to explore interesting words, and look at a Judge's opinion publishing history.  
-- [map_courts](map_courts/map_courts.ipynb) - Map all the courts on a U.S. map.
+- [Map Courts](map_courts/map_courts.ipynb) - Map all the courts on a U.S. map.
