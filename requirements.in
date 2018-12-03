@@ -1,20 +1,24 @@
 pip-tools
 tqdm
 
-Fabric3
-jupyter
-notebook>=5.7.2
+Fabric3 # tasks
 
 requests
+pyquery
 
 pytest # testing
 
-pandas
-matplotlib
+jupyter
+notebook>=5.7.2
+
+pandas # dataframes
+
+matplotlib # plotting
 plotly
-spacy
 seaborn
 
-googlemaps
+spacy # nlp
 
-pyquery
+
+googlemaps>=3.0.2 # mapping using google api
+
