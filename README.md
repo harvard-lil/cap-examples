@@ -65,5 +65,11 @@ $ pyenv activate capexamples
 
 Set up! 
 ```
-(capexamples) $ pip install -r requirements.txt && fab setup
+(capexamples) $ pip install -r requirements.txt
+(capexamples) $ fab setup
+```
+
+To run jupyter notebook examples (i.e. any file ending in .ipynb):
+```
+(capexamples) $ jupyter notebook
 ```
