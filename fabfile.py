@@ -23,7 +23,7 @@ def setup():
     print("Done.")
 
 @task
-def get_cases_from_bulk(jurisdiction="Illinois"):
+def get_cases_from_bulk(jurisdiction="Illinois", data_format="json"):
     """
     Gets all cases of a requested jurisdiction from /bulk if available
     Saves to /data folder
