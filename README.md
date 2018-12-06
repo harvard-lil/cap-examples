@@ -41,6 +41,12 @@ Or, download the Arkansas dataset
 ```
 (capexamples) $ fab get_cases_from_bulk:Arkansas
 ```
+
+Download a dataset with casebody format as xml
+```
+(capexamples) $ fab get_cases_from_bulk:Illinois,data_format=xml
+```
+
  
 ## Using the API
 [Read our API documentation.](https://case.law/api/)
