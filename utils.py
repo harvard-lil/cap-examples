@@ -1,7 +1,7 @@
 import os
 import requests
 import zipfile
-import io
+from tqdm import tqdm
 
 from config import settings
 
@@ -33,11 +33,11 @@ def print_info(instruction):
 
 
 def get_cases_from_bulk(jurisdiction="Illinois", data_format="json"):
-    body_format= "xml" if data_format == "xml" else "text"
-
+    body_format = "xml" if data_format == "xml" else "text"
     bulk_url = settings.API_BULK_URL + "/?body_format=%s&filter_type=jurisdiction" % body_format
     bulk_api_results = requests.get(bulk_url)
     found = False
+
     for jur in bulk_api_results.json()['results']:
         if jurisdiction in jur['file_name']:
             found = True
@@ -46,18 +46,31 @@ def get_cases_from_bulk(jurisdiction="Illinois", data_format="json"):
     if not found:
         raise Exception("Jurisdiction not found. Please check spelling.")
 
-    r = requests.get(jur['download_url'])
-    z = zipfile.ZipFile(io.BytesIO(r.content))
+    filename = os.path.join(settings.DATA_DIR, jur['file_name'])
+    r = requests.get(jur['download_url'], stream=True)
+
+    if r.status_code != 200:
+        raise Exception("Something went wrong:", r.reason)
+
+    print_info("downloading %s into ../data dir" % jur['file_name'])
+    with open(filename, 'wb') as f:
+        for chunk in tqdm(r.iter_content(chunk_size=1024)):
+            if chunk:
+                f.write(chunk)
+    r.close()
 
     print_info("extracting %s into ../data dir" % jur['file_name'])
-    z.extractall(path=settings.DATA_DIR)
+    with zipfile.ZipFile(filename, 'r') as zip_ref:
+        zip_ref.extractall(settings.DATA_DIR)
+
     print_info("Done.")
 
-    return os.path.join(settings.DATA_DIR, jur['file_name'] + '/data/data.jsonl.xz')
+    decompressed_dir = filename.split('.zip')[0]
+    return os.path.join(decompressed_dir + '/data/data.jsonl.xz')
+
 
 def get_and_extract_from_bulk(jurisdiction="Illinois", data_format="json"):
     dir_exists = False
-    dir_path = None
     data_format = "xml" if data_format == "xml" else "text"  # xml or json
 
     for filename in os.listdir(settings.DATA_DIR):
@@ -75,6 +88,7 @@ def get_and_extract_from_bulk(jurisdiction="Illinois", data_format="json"):
 
     return compressed_file
 
+
 def get_cases_from_api(**kwargs):
     """
     Get back json of the first 100 cases unless a cursor argument is provided
@@ -90,4 +104,3 @@ def get_cases_from_api(**kwargs):
     response = requests.get(api_url, headers=headers)
 
     return response.json()
-
