@@ -1,9 +1,11 @@
 import os
 import requests
 import zipfile
-from tqdm import tqdm
-
+import certifi
+import urllib3
 from config import settings
+
+from tqdm import tqdm
 
 CVIOLET = '\33[35m'
 CEND = '\33[0m'
@@ -47,17 +49,20 @@ def get_cases_from_bulk(jurisdiction="Illinois", data_format="json"):
         raise Exception("Jurisdiction not found. Please check spelling.")
 
     filename = os.path.join(settings.DATA_DIR, jur['file_name'])
-    r = requests.get(jur['download_url'], stream=True)
 
-    if r.status_code != 200:
-        raise Exception("Something went wrong:", r.reason)
+    http = urllib3.PoolManager(
+        cert_reqs='CERT_REQUIRED',
+        ca_certs=certifi.where())
+
+    resp = http.request("GET", jur["download_url"], preload_content=False)
+
+    if resp.status != 200:
+        raise Exception("Something went wrong. Please try again later.")
 
     print_info("downloading %s into ../data dir" % jur['file_name'])
     with open(filename, 'wb') as f:
-        for chunk in tqdm(r.iter_content(chunk_size=1024)):
-            if chunk:
-                f.write(chunk)
-    r.close()
+        for chunk in tqdm(resp.stream(1024)):
+            f.write(chunk)
 
     print_info("extracting %s into ../data dir" % jur['file_name'])
     with zipfile.ZipFile(filename, 'r') as zip_ref:
