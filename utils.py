@@ -1,9 +1,11 @@
 import os
 import requests
 import zipfile
-import io
-
+import certifi
+import urllib3
 from config import settings
+from urllib3.exceptions import MaxRetryError
+from tqdm import tqdm
 
 CVIOLET = '\33[35m'
 CEND = '\33[0m'
@@ -33,11 +35,11 @@ def print_info(instruction):
 
 
 def get_cases_from_bulk(jurisdiction="Illinois", data_format="json"):
-    body_format= "xml" if data_format == "xml" else "text"
-
+    body_format = "xml" if data_format == "xml" else "text"
     bulk_url = settings.API_BULK_URL + "/?body_format=%s&filter_type=jurisdiction" % body_format
     bulk_api_results = requests.get(bulk_url)
     found = False
+
     for jur in bulk_api_results.json()['results']:
         if jurisdiction in jur['file_name']:
             found = True
@@ -46,18 +48,41 @@ def get_cases_from_bulk(jurisdiction="Illinois", data_format="json"):
     if not found:
         raise Exception("Jurisdiction not found. Please check spelling.")
 
-    r = requests.get(jur['download_url'])
-    z = zipfile.ZipFile(io.BytesIO(r.content))
+    filename = os.path.join(settings.DATA_DIR, jur['file_name'])
+
+    http = urllib3.PoolManager(
+        cert_reqs='CERT_REQUIRED',
+        ca_certs=certifi.where())
+
+    headers = {'AUTHORIZATION': 'Token {}'.format(settings.API_KEY)}
+    try:
+        resp = http.request("GET", jur["download_url"],
+                            preload_content=False,
+                            headers=headers)
+    except MaxRetryError as err:
+        print("Writing of file was interrupted.\n\n%s" % err)
+        return
+
+    if resp.status != 200:
+        raise Exception("Something went wrong.\n\n%s" % resp.data)
+
+    print_info("downloading %s into ../data dir" % jur['file_name'])
+    with open(filename, 'wb') as f:
+        for chunk in tqdm(resp.stream(1024)):
+            f.write(chunk)
 
     print_info("extracting %s into ../data dir" % jur['file_name'])
-    z.extractall(path=settings.DATA_DIR)
+    with zipfile.ZipFile(filename, 'r') as zip_ref:
+        zip_ref.extractall(settings.DATA_DIR)
+
     print_info("Done.")
 
-    return os.path.join(settings.DATA_DIR, jur['file_name'] + '/data/data.jsonl.xz')
+    decompressed_dir = filename.split('.zip')[0]
+    return os.path.join(decompressed_dir + '/data/data.jsonl.xz')
+
 
 def get_and_extract_from_bulk(jurisdiction="Illinois", data_format="json"):
     dir_exists = False
-    dir_path = None
     data_format = "xml" if data_format == "xml" else "text"  # xml or json
 
     for filename in os.listdir(settings.DATA_DIR):
@@ -69,11 +94,13 @@ def get_and_extract_from_bulk(jurisdiction="Illinois", data_format="json"):
     if dir_exists:
         dir_path = os.path.join(settings.DATA_DIR, filename)
     else:
+        print_info("Getting compressed file for %s from /bulk endpoint.\nThis might take a while." % jurisdiction)
         dir_path = get_cases_from_bulk(jurisdiction=jurisdiction, data_format=data_format)
 
     compressed_file = os.path.join(settings.DATA_DIR, dir_path + '/data/data.jsonl.xz')
 
     return compressed_file
+
 
 def get_cases_from_api(**kwargs):
     """
@@ -88,6 +115,7 @@ def get_cases_from_api(**kwargs):
 
     headers = {'AUTHORIZATION': 'Token {}'.format(settings.API_KEY)}
     response = requests.get(api_url, headers=headers)
+    if response.status_code != 200:
+        raise Exception("Something went wrong.\n\n%s" % response.reason)
 
     return response.json()
-

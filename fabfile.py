@@ -5,6 +5,7 @@ from fabric.api import local
 
 import utils
 
+
 @task
 def setup():
     utils.print_info("Setting up cap-examples")
@@ -22,15 +23,14 @@ def setup():
 
     print("Done.")
 
+
 @task
 def get_cases_from_bulk(jurisdiction="Illinois", data_format="json"):
     """
     Gets all cases of a requested jurisdiction from /bulk if available
     Saves to /data folder
     """
-    utils.print_info("Getting compressed file for %s from /bulk endpoint.\nThis might take a while." % jurisdiction)
-    
-    utils.get_cases_from_bulk(jurisdiction)
+    utils.get_and_extract_from_bulk(jurisdiction=jurisdiction, data_format=data_format)
 
 
 @task
