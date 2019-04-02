@@ -9,7 +9,7 @@ pyquery
 pytest # testing
 
 jupyter
-notebook>=5.7.2
+notebook>=5.7.8
 
 pandas # dataframes
 
