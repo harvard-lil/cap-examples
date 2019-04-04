@@ -49,7 +49,7 @@ msgpack==0.5.6            # via msgpack-numpy, thinc
 murmurhash==1.0.1         # via spacy, thinc
 nbconvert==5.4.0          # via jupyter, notebook
 nbformat==4.4.0           # via ipywidgets, nbconvert, notebook, plotly
-notebook==5.7.2
+notebook==5.7.8
 numpy==1.15.4             # via matplotlib, msgpack-numpy, pandas, scipy, seaborn, spacy, thinc
 pandas==0.23.4
 pandocfilters==1.4.2      # via nbconvert
