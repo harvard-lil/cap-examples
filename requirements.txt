@@ -32,7 +32,7 @@ ipython-genutils==0.2.0   # via nbformat, notebook, qtconsole, traitlets
 ipython==7.0.1            # via ipykernel, ipywidgets, jupyter-console
 ipywidgets==7.4.2         # via jupyter
 jedi==0.13.1              # via ipython
-jinja2==2.10              # via nbconvert, notebook
+jinja2==2.10.1
 jsonschema==2.6.0         # via nbformat
 jupyter-client==5.2.3     # via ipykernel, jupyter-console, notebook, qtconsole
 jupyter-console==6.0.0    # via jupyter
