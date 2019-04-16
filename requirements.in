@@ -10,6 +10,7 @@ pytest # testing
 
 jupyter
 notebook>=5.7.8
+Jinja2==2.10.1
 
 pandas # dataframes
 
@@ -21,4 +22,3 @@ spacy # nlp
 
 
 googlemaps>=3.0.2 # mapping using google api
-
