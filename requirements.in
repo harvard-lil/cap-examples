@@ -4,6 +4,7 @@ tqdm
 Fabric3 # tasks
 
 requests
+urllib3==1.24.2  ## via requests
 pyquery
 
 pytest # testing
