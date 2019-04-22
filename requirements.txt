@@ -95,7 +95,7 @@ tornado==5.1.1            # via ipykernel, jupyter-client, notebook, terminado
 tqdm==4.28.1
 traitlets==4.3.2          # via ipykernel, ipython, ipywidgets, jupyter-client, jupyter-core, nbconvert, nbformat, notebook, qtconsole
 ujson==1.35               # via spacy
-urllib3==1.24.1           # via requests
+urllib3==1.24.2
 wcwidth==0.1.7            # via prompt-toolkit
 webencodings==0.5.1       # via bleach
 widgetsnbextension==3.4.2  # via ipywidgets
