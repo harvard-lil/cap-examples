@@ -19,6 +19,7 @@ A repository of examples of what can be done with Caselaw Access Project data.
 - [Bulk Exploration: ngrams and Justice Cartwright](bulk_exploration/cartwright.ipynb) – Use the open Illinois bulk cases to explore interesting words, and look at a Judge's opinion publishing history.  
 - [Map Courts](map_courts/map_courts.ipynb) - Map all the courts on a U.S. map.
 - [Get Judges](get_judges/get_judges.ipynb) - Get judges and return [CourtListener Person urls](https://www.courtlistener.com/api/rest/v3/people/?name_last=Pregerson&name_first=Harry) 
+- [Python Wrapper](python_wrapper/cap.py) - Python wrapper for searching cases, downloading to CSV, etc.
 
 
 ## Interested in contributing your own examples?
