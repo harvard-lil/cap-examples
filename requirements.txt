@@ -10,7 +10,7 @@ atomicwrites==1.2.1       # via pytest
 attrs==18.2.0             # via pytest
 backcall==0.1.0           # via ipython
 bcrypt==3.1.4             # via paramiko
-bleach==3.0.2             # via nbconvert
+bleach==3.1.1             # via nbconvert
 boto3==1.12.16            # via smart-open
 boto==2.49.0              # via smart-open
 botocore==1.15.16         # via boto3, s3transfer
