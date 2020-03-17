@@ -21,7 +21,4 @@ seaborn
 
 spacy # nlp
 
-# for downloading csvs
-datetime
-
 googlemaps>=3.0.2 # mapping using google api

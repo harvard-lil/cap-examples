@@ -49,7 +49,7 @@ Otherwise, you can run search queries to retrieve lists that match specified par
 
 ```python
 cap.search_cases(search_term="bankruptcy")
-# returns all cases with the word 'bankruptcy' in the heading or full text
+# returns the first 100 cases with the word 'bankruptcy' in the heading or full text
 ```
 <details>
 <summary>View Response</summary>
@@ -94,7 +94,7 @@ Another example:
 
 ```python
 cap.search_cases(jurisdiction="ark")
-# returns all cases from Arkansas
+# returns the first 100 cases from Arkansas
 ```
 
 <details>
@@ -140,7 +140,7 @@ You can mix and match as many search parameters as you want.
 
 ```python
 cap.search_cases(search_term="bankruptcy", jurisdiction="ark", 
-				decision_date_min="1950-01-01, decision_date_max="2000-01-01")
+				decision_date_min="1950-01-01", decision_date_max="2000-01-01")
 ```
 
 <details>
@@ -184,11 +184,11 @@ cap.search_cases(search_term="bankruptcy", jurisdiction="ark",
 
 ## Downloading Data as CSV
 
-You can download search queries as CSV files with the `download_csv` method. To use, pass in a search query JSON retrieved from the `search_cases` method, then pass that into the `download_csv` method along with a filename  Note that you must set `full_case=True` in your search query in order for this function to work. 
+You can download search queries as CSV files with the `download_to_csv` method. To use, pass in a search query JSON retrieved from the `search_cases` method, then pass that into the `download_to_csv` method along with a filename  Note that you must set `full_case=True` in your search query in order for this function to work. 
 
 ```python
 search_results = cap.search_cases(jurisdiction="ark", decision_date_min="2010-01-01", full_case=True)
-cap.download_csv(search_results, filename="21ark")
+cap.download_to_csv(search_results, filename="21ark")
 # downloads all cases in Arkansas from 2010 to later to a CSV file
 ```
 
