@@ -18,6 +18,7 @@ A repository of examples of what can be done with Caselaw Access Project data.
 - [Ngrams](ngrams/ngrams.ipynb) – Use the open Arkansas bulk cases to explore interesting words.
 - [Bulk Exploration: ngrams and Justice Cartwright](bulk_exploration/cartwright.ipynb) – Use the open Illinois bulk cases to explore interesting words, and look at a Judge's opinion publishing history.
 - [Map Courts](map_courts/map_courts.ipynb) - Map all the courts on a U.S. map.
+- [Python Wrapper](python_wrapper/cap.py) - Python wrapper for searching cases, downloading to CSV, etc.
 - [Get Judges](get_judges/get_judges.ipynb) - Get judges and return [CourtListener Person urls](https://www.courtlistener.com/api/rest/v3/people/?name_last=Pregerson&name_first=Harry)
 - [API to CSV](api_to_csv/api_to_csv.py) - Command line Python3 script with no external dependencies, fetching search results from the cases endpoint and writing to a CSV.
 - [Labelling case parties and summarizing cases](labelling_summarizing/labelling_summarizing.ipynb) - Using some basic machine learning to label who the parties in each case were, and then summarizing the case text.

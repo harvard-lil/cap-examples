@@ -23,5 +23,4 @@ seaborn
 spacy # nlp
 gensim
 
-
 googlemaps>=3.0.2 # mapping using google api
