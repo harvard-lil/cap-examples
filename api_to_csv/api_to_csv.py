@@ -61,7 +61,7 @@ def api_query_to_csv(url, api_key=None, out_path=None):
         Write all case results from URL to out_path, defaulting to stdout.
     """
     if out_path:
-        out_file = open(out_path, 'w')
+        out_file = open(out_path, 'w', encoding='utf-8')
     else:
         out_file = sys.stdout
     out = csv.writer(out_file)
