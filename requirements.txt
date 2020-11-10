@@ -5,7 +5,6 @@
 #    pip-compile --output-file requirements.txt requirements.in
 #
 appnope==0.1.0            # via ipython
-asn1crypto==0.24.0        # via cryptography
 atomicwrites==1.2.1       # via pytest
 attrs==18.2.0             # via pytest
 backcall==0.1.0           # via ipython
@@ -18,7 +17,7 @@ certifi==2018.10.15       # via requests
 cffi==1.11.5              # via bcrypt, cryptography, pynacl
 chardet==3.0.4            # via requests
 click==7.0                # via pip-tools
-cryptography==2.3.1       # via paramiko
+cryptography==3.2.1
 cssselect==1.0.3          # via pyquery
 cycler==0.10.0            # via matplotlib
 cymem==2.0.2              # via preshed, spacy, thinc
@@ -31,7 +30,7 @@ entrypoints==0.2.3        # via nbconvert
 fabric3==1.14.post1
 gensim==3.8.1
 googlemaps==3.0.2
-idna==2.7                 # via cryptography, requests
+idna==2.7                 # via requests
 ipykernel==5.1.0          # via ipywidgets, jupyter, jupyter-console, notebook, qtconsole
 ipython-genutils==0.2.0   # via nbformat, notebook, qtconsole, traitlets
 ipython==7.0.1            # via ipykernel, ipywidgets, jupyter-console
