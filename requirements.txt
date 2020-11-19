@@ -5,6 +5,7 @@
 #    pip-compile --output-file requirements.txt requirements.in
 #
 appnope==0.1.0            # via ipython
+argon2-cffi==20.1.0       # via notebook
 atomicwrites==1.2.1       # via pytest
 attrs==18.2.0             # via pytest
 backcall==0.1.0           # via ipython
@@ -14,7 +15,7 @@ boto3==1.12.16            # via smart-open
 boto==2.49.0              # via smart-open
 botocore==1.15.16         # via boto3, s3transfer
 certifi==2018.10.15       # via requests
-cffi==1.11.5              # via bcrypt, cryptography, pynacl
+cffi==1.11.5              # via argon2-cffi, bcrypt, cryptography, pynacl
 chardet==3.0.4            # via requests
 click==7.0                # via pip-tools
 cryptography==3.2.1
@@ -39,9 +40,9 @@ jedi==0.13.1              # via ipython
 jinja2==2.10.1
 jmespath==0.9.5           # via boto3, botocore
 jsonschema==2.6.0         # via nbformat
-jupyter-client==5.2.3     # via ipykernel, jupyter-console, notebook, qtconsole
+jupyter-client==6.1.7     # via ipykernel, jupyter-console, notebook, qtconsole
 jupyter-console==6.0.0    # via jupyter
-jupyter-core==4.4.0       # via jupyter-client, nbconvert, nbformat, notebook, qtconsole
+jupyter-core==4.6.3       # via jupyter-client, nbconvert, nbformat, notebook, qtconsole
 jupyter==1.0.0
 kiwisolver==1.0.1         # via matplotlib
 lxml==4.2.5               # via pyquery
@@ -54,7 +55,7 @@ msgpack==0.5.6            # via msgpack-numpy, thinc
 murmurhash==1.0.1         # via spacy, thinc
 nbconvert==5.4.0          # via jupyter, notebook
 nbformat==4.4.0           # via ipywidgets, nbconvert, notebook, plotly
-notebook==5.7.8
+notebook==6.1.5
 numpy==1.15.4             # via gensim, matplotlib, msgpack-numpy, pandas, scipy, seaborn, spacy, thinc
 pandas==0.23.4
 pandocfilters==1.4.2      # via nbconvert
@@ -91,10 +92,10 @@ scipy==1.1.0              # via gensim, seaborn
 seaborn==0.9.0
 send2trash==1.5.0         # via notebook
 simplegeneric==0.8.1      # via ipython
-six==1.11.0               # via bcrypt, bleach, cryptography, cycler, fabric3, gensim, more-itertools, pathlib2, pip-tools, plotly, prompt-toolkit, pynacl, pytest, python-dateutil, retrying, thinc, traitlets
+six==1.11.0               # via argon2-cffi, bcrypt, bleach, cryptography, cycler, fabric3, gensim, more-itertools, pathlib2, pip-tools, plotly, prompt-toolkit, pynacl, pytest, python-dateutil, retrying, thinc, traitlets
 smart-open==1.9.0         # via gensim
 spacy==2.0.17
-terminado==0.8.1          # via notebook
+terminado==0.8.3          # via notebook
 testpath==0.4.2           # via nbconvert
 thinc==6.12.0             # via spacy
 toolz==0.9.0              # via cytoolz
