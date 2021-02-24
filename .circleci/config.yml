@@ -1,0 +1,13 @@
+version: 2.1
+jobs:
+  build:
+    docker: 
+      - image: registry.lil.tools/circleci/python:3.5
+    steps:
+      - checkout # check out the code in the project directory
+      - run:
+        command: |
+          cp config/settings.example.py config/settings.py
+          pip install -r requirements.txt
+          fab setup
+          pytest
