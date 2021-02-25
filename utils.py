@@ -3,7 +3,7 @@ import requests
 import zipfile
 import certifi
 import urllib3
-from config import settings
+
 from urllib3.exceptions import MaxRetryError
 from tqdm import tqdm
 
@@ -14,6 +14,7 @@ CURL = '\33[4m'
 
 
 def get_api_url(resource=None):
+    from config import settings
     root_url = "%s/%s/" % (settings.API_URL, settings.API_VERSION)
     if not resource:
         return root_url
@@ -35,6 +36,7 @@ def print_info(instruction):
 
 
 def get_cases_from_bulk(jurisdiction="Illinois", data_format="json"):
+    from config import settings
     body_format = "xml" if data_format == "xml" else "text"
     bulk_url = settings.API_BULK_URL + "/?body_format=%s&filter_type=jurisdiction" % body_format
     bulk_api_results = requests.get(bulk_url)
@@ -82,6 +84,7 @@ def get_cases_from_bulk(jurisdiction="Illinois", data_format="json"):
 
 
 def get_and_extract_from_bulk(jurisdiction="Illinois", data_format="json"):
+    from config import settings
     dir_exists = False
     data_format = "xml" if data_format == "xml" else "text"  # xml or json
 
@@ -106,6 +109,7 @@ def get_cases_from_api(**kwargs):
     """
     Get back json of the first 100 cases unless a cursor argument is provided
     """
+    from config import settings
     api_url = get_api_url(resource='cases')
     filters = "?format=json&"
     for key, val in kwargs.items():
