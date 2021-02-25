@@ -5,13 +5,17 @@ A repository of examples of what can be done with Caselaw Access Project data.
 - [CAP homepage](https://case.law/)
 
 ## Table of Contents
-- [Examples](#examples)
+- [Introduction](#start-here!)
+- [Examples](#more-examples)
 - [Contributing instructions](#interested-in-contributing-your-own-examples)
 - [Using the API](#using-the-api)
 - [Download bulk data](#downloading-bulk-data)
 - [Installation Instructions](#install) - install this repo to run examples on your own machine
 
-## Examples
+## Start here!
+- [Introduction](introduction/introduction.ipynb)
+
+## More examples
 - [Bulk Case Extract](bulk_extract/extract_cases.ipynb) - Get cases from our api's /bulk endpoint. Extract cases into a dataframe.
 - [Full Text Search](full_text_search/full_text_search.ipynb) - Get all cases that include a keyword.
 - [Full Text Search with Context](api_text_search/api_text_search.py) - Like full text search, only this time using your API key to get the context around the word.
@@ -25,12 +29,13 @@ A repository of examples of what can be done with Caselaw Access Project data.
 
 ## Interested in contributing your own examples?
 1. Fork this repository
-2. Add your work
-3. Make sure to add any requirements your project needs to [requirements.in](requirements.in)
-4. Run ```pip-compile --output-file requirements.txt requirements.in```
-5. Add a link in the [Examples section](#examples)
-6. Create a [pull request](https://github.com/harvard-lil/cap-examples/compare)
-7. Receive gratitude (thank you so much!!)
+2. [Install dependencies](#install)
+3. Add your work
+4. Make sure to add any requirements your project needs to [requirements.in](requirements.in)
+5. Run ```pip-compile --output-file requirements.txt requirements.in```
+6. Add a link in the [Examples section](#examples)
+7. Create a [pull request](https://github.com/harvard-lil/cap-examples/compare)
+8. Receive gratitude (thank you so much!!)
 
 
 ## Using the API
