@@ -10,4 +10,4 @@ jobs:
             cp config/settings.example.py config/settings.py
             pip install -r requirements.txt
             fab setup
-            pytest
+            python -m pytest
