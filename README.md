@@ -61,6 +61,7 @@ Once you have your API key, copy and paste it into your secret keys file [settin
 
 ## Install
 These examples assume some python knowledge. We will be using `python3`.
+This code has been tested using Python `3.7.5`.
 We will also be installing all our dependencies and working in a [virtual environment](https://docs.python.org/3/library/venv.html).
 
 ```
