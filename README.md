@@ -1,5 +1,7 @@
 # CAP examples
 
+[![CircleCI](https://circleci.com/gh/harvard-lil/cap-examples.svg?style=svg)](https://circleci.com/gh/harvard-lil/cap-examples)
+
 A repository of examples of what can be done with Caselaw Access Project data.
 - [CAP Github repo](https://github.com/harvard-lil/capstone)
 - [CAP homepage](https://case.law/)
