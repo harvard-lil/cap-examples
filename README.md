@@ -60,25 +60,23 @@ Once you have your API key, copy and paste it into your secret keys file [settin
 
 
 ## Install
-`3.5.4` is the python version we're currently using on CAP, so to keep things simple, we'll be using the same version for these examples.
+These examples assume some python knowledge. We will be using `python3`.
+This code has been tested using Python `3.7.5`.
+We will also be installing all our dependencies and working in a [virtual environment](https://docs.python.org/3/library/venv.html).
 
-We recommend installing pyenv — [follow instructions to install here](https://github.com/pyenv/pyenv).
-
-Install your python version using pyenv and activate your virtual environment:
 ```
-$ pyenv install 3.5.4
-$ pyenv virtualenv 3.5.4 capexamples
-$ pyenv activate capexamples
-(capexamples) $
+$ python3 -mvenv venv
+$ source venv/bin/activate
+$ (venv) pip install -r requirements.txt
 ```
 
 Set up!
 ```
-(capexamples) $ pip install -r requirements.txt
-(capexamples) $ fab setup
+(venv) $ pip install -r requirements.txt
+(venv) $ fab setup
 ```
 
 To run jupyter notebook examples (i.e. any file ending in .ipynb):
 ```
-(capexamples) $ jupyter notebook
+(venv) $ jupyter notebook
 ```

@@ -3,9 +3,16 @@ import requests
 import zipfile
 import certifi
 import urllib3
-from config import settings
+
 from urllib3.exceptions import MaxRetryError
 from tqdm import tqdm
+
+try:
+    from config import settings
+except ImportError:
+    # error triggered on setup.
+    # settings should exist after.
+    pass
 
 CVIOLET = '\33[35m'
 CEND = '\33[0m'
