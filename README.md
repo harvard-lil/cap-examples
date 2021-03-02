@@ -7,13 +7,17 @@ A repository of examples of what can be done with Caselaw Access Project data.
 - [CAP homepage](https://case.law/)
 
 ## Table of Contents
-- [Examples](#examples)
+- [Introduction](#start-here!)
+- [Examples](#more-examples)
 - [Contributing instructions](#interested-in-contributing-your-own-examples)
-- [Download bulk data](#downloading-bulk-data)
 - [Using the API](#using-the-api)
+- [Download bulk data](#downloading-bulk-data)
 - [Installation Instructions](#install) - install this repo to run examples on your own machine
 
-## Examples
+## Start here!
+- [Introduction](introduction/introduction.ipynb)
+
+## More examples
 - [Bulk Case Extract](bulk_extract/extract_cases.ipynb) - Get cases from our api's /bulk endpoint. Extract cases into a dataframe.
 - [Full Text Search](full_text_search/full_text_search.ipynb) - Get all cases that include a keyword.
 - [Full Text Search with Context](api_text_search/api_text_search.py) - Like full text search, only this time using your API key to get the context around the word.
@@ -27,16 +31,28 @@ A repository of examples of what can be done with Caselaw Access Project data.
 
 ## Interested in contributing your own examples?
 1. Fork this repository
-2. Add your work
-3. Make sure to add any requirements your project needs to [requirements.in](requirements.in)
-4. Run ```pip-compile --output-file requirements.txt requirements.in```
-5. Add a link in the [Examples section](#examples)
-6. Create a [pull request](https://github.com/harvard-lil/cap-examples/compare)
-7. Receive gratitude (thank you so much!!)
+2. [Install dependencies](#install)
+3. Add your work
+4. Make sure to add any requirements your project needs to [requirements.in](requirements.in)
+5. Run ```pip-compile --output-file requirements.txt requirements.in```
+6. Add a link in the [Examples section](#examples)
+7. Create a [pull request](https://github.com/harvard-lil/cap-examples/compare)
+8. Receive gratitude (thank you so much!!)
+
+
+## Using the API
+[Read our API documentation.](https://case.law/api/)
+
+In order to download [non-whitelisted](https://case.law/api/#limits) cases, you must [register for an API key](https://case.law/user/register/).
+
+Once you have your API key, copy and paste it into your secret keys file [settings.py](config/settings.py).
 
 ## Downloading bulk data
 
 #### Helper methods to download whitelisted bulk data
+These example require the existence of an API key in settings.py.
+Follow the instructions above in the [Using the API](#using-the-api) section to obtain one.  
+
 Download the Illinois dataset
 ```
 (capexamples) $ fab get_cases_from_bulk:Illinois
@@ -51,15 +67,6 @@ Download a dataset with casebody format as xml
 ```
 (capexamples) $ fab get_cases_from_bulk:Illinois,data_format=xml
 ```
-
-
-## Using the API
-[Read our API documentation.](https://case.law/api/)
-
-In order to download [non-whitelisted](https://case.law/api/#limits) cases, you must [register for an API key](https://case.law/user/register/).
-
-Once you have your API key, copy and paste it into your secret keys file [settings.py](config/settings.py).
-
 
 ## Install
 These examples assume some python knowledge. We will be using `python3`.

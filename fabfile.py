@@ -22,6 +22,9 @@ def setup():
     local("pip install -r requirements.txt")
 
     print("Done.")
+    utils.print_info("Register to get an API key => https://case.law/user/register/")
+    print("=============================================================")
+    utils.print_info("Once finished, copy the API key => https://case.law/user/details and paste it into config/settings.py")
 
 
 @task

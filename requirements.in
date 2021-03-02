@@ -2,7 +2,6 @@ pip-tools
 tqdm
 
 Fabric3 # tasks
-cryptography>=3.2  ## pinned for now, from Fabric3 via paramiko
 
 requests
 urllib3==1.24.2  ## via requests
@@ -13,7 +12,7 @@ pytest # testing
 
 jupyter
 notebook>=6.1.5
-Jinja2==2.10.1
+Jinja2
 
 pandas # dataframes
 
