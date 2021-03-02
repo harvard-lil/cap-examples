@@ -16,19 +16,20 @@ backcall==0.1.0
     # via ipython
 bcrypt==3.1.4
     # via paramiko
-bleach==3.1.4
+bleach==3.3.0
     # via nbconvert
-boto3==1.12.16
-    # via smart-open
-boto==2.49.0
-    # via smart-open
-botocore==1.15.16
+blis==0.7.4
     # via
-    #   boto3
-    #   s3transfer
+    #   spacy
+    #   thinc
+catalogue==2.0.1
+    # via
+    #   spacy
+    #   srsly
+    #   thinc
 certifi==2018.10.15
     # via requests
-cffi==1.11.5
+cffi==1.14.5
     # via
     #   argon2-cffi
     #   bcrypt
@@ -36,9 +37,11 @@ cffi==1.11.5
     #   pynacl
 chardet==3.0.4
     # via requests
-click==7.0
-    # via pip-tools
-cryptography==3.2.1
+click==7.1.2
+    # via
+    #   pip-tools
+    #   typer
+cryptography==3.4.6
     # via paramiko
 cssselect==1.0.3
     # via pyquery
@@ -49,8 +52,6 @@ cymem==2.0.2
     #   preshed
     #   spacy
     #   thinc
-cytoolz==0.9.0.1
-    # via thinc
 decorator==4.3.0
     # via
     #   ipython
@@ -58,12 +59,6 @@ decorator==4.3.0
     #   traitlets
 defusedxml==0.5.0
     # via nbconvert
-dill==0.2.8.2
-    # via
-    #   spacy
-    #   thinc
-docutils==0.15.2
-    # via botocore
 entrypoints==0.2.3
     # via nbconvert
 fabric3==1.14.post1
@@ -74,6 +69,10 @@ googlemaps==3.0.2
     # via -r requirements.in
 idna==2.7
     # via requests
+importlib-metadata==3.7.0
+    # via
+    #   catalogue
+    #   spacy
 ipykernel==5.1.0
     # via
     #   ipywidgets
@@ -101,10 +100,7 @@ jinja2==2.11.3
     #   -r requirements.in
     #   nbconvert
     #   notebook
-jmespath==0.9.5
-    # via
-    #   boto3
-    #   botocore
+    #   spacy
 jsonschema==2.6.0
     # via nbformat
 jupyter-client==6.1.7
@@ -138,16 +134,9 @@ mistune==0.8.4
     # via nbconvert
 more-itertools==4.3.0
     # via pytest
-msgpack-numpy==0.4.3.2
-    # via
-    #   spacy
-    #   thinc
-msgpack==0.5.6
-    # via
-    #   msgpack-numpy
-    #   thinc
 murmurhash==1.0.1
     # via
+    #   preshed
     #   spacy
     #   thinc
 nbconvert==5.4.0
@@ -167,14 +156,18 @@ notebook==6.1.5
     #   widgetsnbextension
 numpy==1.15.4
     # via
+    #   blis
     #   gensim
     #   matplotlib
-    #   msgpack-numpy
     #   pandas
     #   scipy
     #   seaborn
     #   spacy
     #   thinc
+packaging==20.9
+    # via
+    #   bleach
+    #   spacy
 pandas==0.23.4
     # via
     #   -r requirements.in
@@ -185,21 +178,19 @@ paramiko==2.4.2
     # via fabric3
 parso==0.3.1
     # via jedi
+pathy==0.4.0
+    # via spacy
 pexpect==4.6.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-pip-tools==3.1.0
+pip-tools==5.5.0
     # via -r requirements.in
-plac==0.9.6
-    # via
-    #   spacy
-    #   thinc
 plotly==3.4.0
     # via -r requirements.in
 pluggy==0.8.0
     # via pytest
-preshed==2.0.1
+preshed==3.0.5
     # via
     #   spacy
     #   thinc
@@ -219,6 +210,10 @@ pyasn1==0.4.4
     # via paramiko
 pycparser==2.19
     # via cffi
+pydantic==1.7.3
+    # via
+    #   spacy
+    #   thinc
 pygments==2.2.0
     # via
     #   ipython
@@ -228,14 +223,15 @@ pygments==2.2.0
 pynacl==1.3.0
     # via paramiko
 pyparsing==2.3.0
-    # via matplotlib
+    # via
+    #   matplotlib
+    #   packaging
 pyquery==1.4.0
     # via -r requirements.in
 pytest==3.10.0
     # via -r requirements.in
 python-dateutil==2.7.3
     # via
-    #   botocore
     #   jupyter-client
     #   matplotlib
     #   pandas
@@ -249,8 +245,6 @@ pyzmq==17.1.2
     #   notebook
 qtconsole==4.4.2
     # via jupyter
-regex==2017.11.9
-    # via spacy
 requests==2.20.0
     # via
     #   -r requirements.in
@@ -260,8 +254,6 @@ requests==2.20.0
     #   spacy
 retrying==1.3.3
     # via plotly
-s3transfer==0.3.3
-    # via boto3
 scipy==1.1.0
     # via
     #   gensim
@@ -277,42 +269,45 @@ six==1.11.0
     #   argon2-cffi
     #   bcrypt
     #   bleach
-    #   cryptography
     #   cycler
     #   fabric3
     #   gensim
     #   more-itertools
-    #   pip-tools
     #   plotly
     #   prompt-toolkit
     #   pynacl
     #   pytest
     #   python-dateutil
     #   retrying
-    #   thinc
     #   traitlets
-smart-open==1.9.0
-    # via gensim
-spacy==2.0.17
+smart-open==3.0.0
+    # via
+    #   gensim
+    #   pathy
+spacy-legacy==3.0.1
+    # via spacy
+spacy==3.0.3
     # via -r requirements.in
+srsly==2.4.0
+    # via
+    #   spacy
+    #   thinc
 terminado==0.8.3
     # via notebook
 testpath==0.4.2
     # via nbconvert
-thinc==6.12.0
+thinc==8.0.1
     # via spacy
-toolz==0.9.0
-    # via cytoolz
 tornado==5.1.1
     # via
     #   ipykernel
     #   jupyter-client
     #   notebook
     #   terminado
-tqdm==4.28.1
+tqdm==4.58.0
     # via
     #   -r requirements.in
-    #   thinc
+    #   spacy
 traitlets==4.3.2
     # via
     #   ipykernel
@@ -324,13 +319,23 @@ traitlets==4.3.2
     #   nbformat
     #   notebook
     #   qtconsole
-ujson==1.35
-    # via spacy
+typer==0.3.2
+    # via
+    #   pathy
+    #   spacy
+typing-extensions==3.7.4.3
+    # via
+    #   importlib-metadata
+    #   spacy
+    #   thinc
 urllib3==1.24.2
     # via
     #   -r requirements.in
-    #   botocore
     #   requests
+wasabi==0.8.2
+    # via
+    #   spacy
+    #   thinc
 wcwidth==0.1.7
     # via prompt-toolkit
 webencodings==0.5.1
@@ -339,8 +344,9 @@ wget==3.2
     # via -r requirements.in
 widgetsnbextension==3.4.2
     # via ipywidgets
-wrapt==1.10.11
-    # via thinc
+zipp==3.4.0
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
+# pip
 # setuptools
