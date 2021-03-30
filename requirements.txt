@@ -214,7 +214,7 @@ pydantic==1.7.3
     # via
     #   spacy
     #   thinc
-pygments==2.2.0
+pygments==2.8.1
     # via
     #   ipython
     #   jupyter-console
