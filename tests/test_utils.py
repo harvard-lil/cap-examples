@@ -14,6 +14,5 @@ def test_get_api_url():
     check_response(resp)
 
     content = resp.json()
-    assert "citations" in content.keys()
     assert "cases" in content.keys()
 
