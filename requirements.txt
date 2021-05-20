@@ -210,7 +210,7 @@ pyasn1==0.4.4
     # via paramiko
 pycparser==2.19
     # via cffi
-pydantic==1.7.3
+pydantic==1.7.4
     # via
     #   spacy
     #   thinc
