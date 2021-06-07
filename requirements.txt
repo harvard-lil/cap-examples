@@ -245,7 +245,7 @@ pyzmq==17.1.2
     #   notebook
 qtconsole==4.4.2
     # via jupyter
-requests==2.20.0
+requests==2.25.1
     # via
     #   -r requirements.in
     #   googlemaps
@@ -328,10 +328,8 @@ typing-extensions==3.7.4.3
     #   importlib-metadata
     #   spacy
     #   thinc
-urllib3==1.24.2
-    # via
-    #   -r requirements.in
-    #   requests
+urllib3==1.26.5
+    # via requests
 wasabi==0.8.2
     # via
     #   spacy
