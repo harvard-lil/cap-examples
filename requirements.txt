@@ -149,7 +149,7 @@ nbformat==4.4.0
     #   nbconvert
     #   notebook
     #   plotly
-notebook==6.1.5
+notebook==6.4.3
     # via
     #   -r requirements.in
     #   jupyter
@@ -298,7 +298,7 @@ testpath==0.4.2
     # via nbconvert
 thinc==8.0.1
     # via spacy
-tornado==5.1.1
+tornado==6.1
     # via
     #   ipykernel
     #   jupyter-client
