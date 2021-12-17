@@ -122,7 +122,7 @@ jupyter==1.0.0
     # via -r requirements.in
 kiwisolver==1.0.1
     # via matplotlib
-lxml==4.6.3
+lxml==4.7.1
     # via pyquery
 markupsafe==1.1.1
     # via jinja2
