@@ -70,7 +70,7 @@ Download a dataset with casebody format as xml
 
 ## Install
 These examples assume some python knowledge. We will be using `python3`.
-This code has been tested using Python `3.7.5`.
+This code has been tested using Python `3.9.10`.
 We will also be installing all our dependencies and working in a [virtual environment](https://docs.python.org/3/library/venv.html).
 
 ```
