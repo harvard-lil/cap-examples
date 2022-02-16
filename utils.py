@@ -104,7 +104,7 @@ def get_and_extract_from_bulk(jurisdiction="Illinois", data_format="json"):
         print_info("Getting compressed file for %s from /bulk endpoint.\nThis might take a while." % jurisdiction)
         dir_path = get_cases_from_bulk(jurisdiction=jurisdiction, data_format=data_format)
 
-    compressed_file = os.path.join(settings.DATA_DIR, dir_path + '/data/data.jsonl.xz')
+    compressed_file = os.path.join(settings.DATA_DIR, dir_path)
 
     return compressed_file
 
