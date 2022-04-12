@@ -180,7 +180,7 @@ nest-asyncio==1.5.4
     #   jupyter-client
     #   nbclient
     #   notebook
-notebook==6.4.8
+notebook==6.4.10
     # via
     #   -r requirements.in
     #   jupyter
